@@ -1,0 +1,130 @@
+body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background: cornflowerblue;
+}
+.container{
+    position: relative;
+}
+
+.frame{
+    position: relative;
+    top: 50px;
+    cursor: pointer;
+    animation: up 3s linear infinite;
+}
+
+@keyframes up{
+    0%, 100%{
+          transform: translateY(0);
+    }50%{
+          transform: translateY(-80px);
+    }
+}
+
+.envelope{
+    position: relative;
+    width: 300px;
+    height: 200px;
+    background: rgb(175,68,109);
+}
+
+.envelope::before{
+    background: rgb(230, 116, 159);
+    content: '';
+    position: absolute;
+    width: 212px;
+    height: 212px;
+    transform: rotate(45deg);
+    top: -105px;
+    left: 44px;
+    border-radius: 30px 0 0 0;
+}
+
+.card{
+    position: absolute;
+    background: whitesmoke;
+    width: 270px;
+    height: 170px;
+    top: 5px;
+    left: 15px;
+    box-shadow: -5px -5px 100px rgba(0, 0, 0, 0.4);
+
+    animation: card_up 4s linear infinite;
+}
+
+@keyframes card_up{
+    from{
+          transform: translateY(0);
+    }
+    to{
+          transform: translateY(-8em);
+    }
+}
+
+.card::before{
+    content: '';
+    position: absolute;
+    border: 4px solid #2bb843;
+    border-style: dotted;
+    width: 240px;
+    height: 140px;
+    left: 12px;
+    top: 12px;
+}
+
+.text{
+    position: absolute;
+    font-family: 'Times New Roman', Times, serif,cursive;
+    font-size: 28px;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+    line-height: 25px;
+    top: 20px;
+    left: 105px;
+    background: linear-gradient(to left, black, indigo, blue, green, orange, red);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.front{
+    position: absolute;
+    border-right: 180px solid rgb(116, 38, 68);
+    border-top: 95px solid transparent;
+    border-bottom: 100px solid transparent;
+    left: 120px;
+    top: 5px;
+    width: 0px;
+    height: 0;
+    z-index: 10;
+}
+
+.front::before{
+    position: absolute;
+    content: '';
+    border-left: 300px solid rgb(121, 28, 65);
+    border-top: 195px solid transparent;
+    left: -120px;
+    top: -95px;
+    width: 0px;
+    height: 0px;
+}
+
+
+@keyframes scale{
+    0%, 100%{
+          transform: scaleX(0.2);
+    }
+    50%{
+          transform: scaleX(0.85);
+    }
+}
+
+.clickme {
+    display: flex;
+    margin-top: 400px;
+    margin-left: -200px;
+}
